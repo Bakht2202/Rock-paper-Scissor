@@ -1,0 +1,67 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Courier New', Courier, monospace;
+    display: grid;
+    justify-content: center;
+}
+#form{
+    margin-top: 270px;
+    border: 3px solid black;
+    padding: 20px 20px 0px 20px;
+    width: 400px;
+
+}
+.section-one{
+    display: flex;
+    justify-content: space-evenly;
+}
+.section-two{
+    display: flex;
+    justify-content: space-evenly;
+}
+#Shoose-option-section h2{
+    display: grid;
+    justify-content: center;
+}
+#Shoose-option-section img, .first-subject, .second-subject{
+    height: 100px;
+    width: 115px;
+    cursor: pointer;
+}
+#Shoose-option-section{
+    border-top: 2px solid black;
+}
+.image-section{
+    display: flex;
+    justify-content: space-evenly;
+}
+.computer-score{
+    margin-right: 155px;
+}
+#game-section{
+    display: flex;
+    justify-content: space-evenly;
+}
+.txt-section{
+    border-bottom: 2px solid black;
+}
+.first-subject, .second-subject{
+    cursor: auto;
+}
+#computer-score{
+    margin-right: 60px;
+}
+.first-subject{
+    margin-left: 20px;
+}
+@keyframes downLine{
+    0%{
+        height: 0px;
+        opacity: -5;
+    }
+    100%{
+        height: 100px;
+        opacity: 1;
+    }
+}
