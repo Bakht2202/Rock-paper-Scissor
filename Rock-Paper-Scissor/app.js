@@ -1,3 +1,4 @@
+const form = document.getElementById("form");
 const gameSection = document.getElementById("game-section");
 const rock = document.getElementById("rock");
 const paper = document.getElementById("paper");
@@ -5,8 +6,12 @@ const scissor = document.getElementById("scissor");
 const computerScore = document.getElementById("computer-score");
 const playerScore = document.getElementById("player-score");
 const optionSection = document.getElementById("Shoose-option-section");
+const addComputer = document.getElementById("computer-add");
+const addPlayer = document.getElementById("player-add");
 var tostart = false;
 var secondSubject;
+var plusComputerScore = 0;
+var plusPlayerScore = 0;
 
 rock.onclick = function(){
     manageSize();
@@ -37,29 +42,43 @@ function importResults(){
     var firstObject = document.getElementsByClassName("first-subject")[0];
     var secondObject = document.getElementsByClassName("second-subject")[0];
     if(firstObject.id == secondObject.id){
-
+        whenDraw();
     }
     else if(firstObject.id == "rock" && secondObject.id == "scissor"){
         computerScore.innerHTML++;
+        addScoreToComputer();
+        whenLose();
     }
     else if(firstObject.id == "scissor" && secondObject.id == "paper"){
         computerScore.innerHTML++;
+        addScoreToComputer();
+        whenLose();
     }
     else if(firstObject.id == "paper" && secondObject.id == "rock"){
         computerScore.innerHTML++;
+        addScoreToComputer();
+        whenLose();
     }
     else if(secondObject.id == "rock" && firstObject.id == "scissor"){
         playerScore.innerHTML++;
+        addScoreToPlayer();
+        whenWin();
     }
     else if(secondObject.id == "paper" && firstObject.id == "rock"){
         playerScore.innerHTML++;
+        addScoreToPlayer();
+        whenWin();
     }
     else if(secondObject.id == "scissor" && firstObject.id == "paper"){
         playerScore.innerHTML++;
+        addScoreToPlayer();
+        whenWin();
     }
 }
 
 function randomSubject(){
+    addComputer.innerHTML = null;
+    addPlayer.innerHTML = null;
     if(tostart == true){
         gameSection.removeChild(gameSection.firstElementChild);
         gameSection.removeChild(gameSection.lastElementChild);
@@ -102,4 +121,33 @@ function randomSubject(){
 function manageSize() {  
     gameSection.style.animationName = "downLine";
     gameSection.style.animationDuration = "0.5s";
+}
+function addScoreToComputer(){
+    addComputer.classList.add("add-to-plus-score");
+    plusPlayerScore = 0;
+    plusComputerScore++;
+    addComputer.innerHTML = "+" + plusComputerScore;
+    whichToShow = true;
+}
+function addScoreToPlayer(){
+    addPlayer.classList.add("add-to-plus-score");
+    plusComputerScore = 0;
+    plusPlayerScore++;
+    addPlayer.innerHTML = "+" + plusPlayerScore;
+    whichToShow = false;
+}
+function whenWin(){
+    form.style.backgroundColor = "#deffde";
+}
+function whenLose(){
+    form.style.backgroundColor = "#f9dbdb";
+}
+function whenDraw(){
+    form.style.backgroundColor = "white";
+    if(plusComputerScore != 0){
+        addComputer.innerHTML = "+" + plusComputerScore;
+    }
+    else if(plusPlayerScore != 0){
+        addPlayer.innerHTML = "+" + plusPlayerScore;
+    }
 }

@@ -2,15 +2,18 @@ body{
     margin: 0px;
     padding: 0px;
     font-family: 'Courier New', Courier, monospace;
-    display: grid;
-    justify-content: center;
+}
+*{
+    user-select: none;
 }
 #form{
-    margin-top: 270px;
     border: 3px solid black;
     padding: 20px 20px 0px 20px;
     width: 400px;
-
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
 }
 .section-one{
     display: flex;
@@ -55,6 +58,24 @@ body{
 .first-subject{
     margin-left: 20px;
 }
+#south-body{
+    height: 600px;
+}
+.section-plus{
+    display: flex;
+    justify-content: space-between;
+}
+.section-plus *{
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+.add-to-plus-score{
+    animation-name: plusScoreOpacity;
+    animation-duration: 0.5s;
+}
+.section-plus{
+    height: 18px;
+}
 @keyframes downLine{
     0%{
         height: 0px;
@@ -65,3 +86,17 @@ body{
         opacity: 1;
     }
 }
+@keyframes plusScoreOpacity{
+    0%{
+        opacity: -5;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@media screen and (device-width: 600px) and (device-width: 900px){
+    #form{
+        width: 80%;
+    }
+}
+
