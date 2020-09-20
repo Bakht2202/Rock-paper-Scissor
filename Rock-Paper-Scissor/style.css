@@ -94,9 +94,19 @@ body{
         opacity: 1;
     }
 }
-@media screen and (device-width: 600px) and (device-width: 900px){
+@media (max-device-width: 380px){
     #form{
-        width: 80%;
+        width: 70%;
+    }
+}
+@media (min-device-width: 380px) and (max-device-width: 500px){
+    #form{
+        width: 60%;
+    }
+}
+@media (min-device-width: 500px) and (max-device-width: 700px){
+    #form{
+        width: 50%;
     }
 }
 
