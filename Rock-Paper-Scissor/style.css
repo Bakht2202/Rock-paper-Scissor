@@ -23,16 +23,16 @@ body{
     display: flex;
     justify-content: space-evenly;
 }
-#Shoose-option-section h2{
+#choose-option-section h2{
     display: grid;
     justify-content: center;
 }
-#Shoose-option-section img, .first-subject, .second-subject{
+#choose-option-section img, .first-subject, .second-subject{
     height: 100px;
     width: 115px;
     cursor: pointer;
 }
-#Shoose-option-section{
+#choose-option-section{
     border-top: 2px solid black;
 }
 .image-section{
@@ -98,10 +98,22 @@ body{
     #form{
         width: 70%;
     }
+    .section-one span{
+        font-size: 32px;
+    }
+    #choose-option-section h2{
+        font-size: 40px;
+    }
 }
 @media (min-device-width: 380px) and (max-device-width: 500px){
     #form{
         width: 60%;
+    }
+    .section-one span{
+        font-size: 28px;
+    }
+    #choose-option-section h2{
+        font-size: 35px;
     }
 }
 @media (min-device-width: 500px) and (max-device-width: 700px){
